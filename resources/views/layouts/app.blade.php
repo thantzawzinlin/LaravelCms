@@ -15,9 +15,11 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @toastr_css
 </head>
 <body>
     <div id="app">
@@ -105,5 +107,9 @@
                    
         </main>
     </div>
+    @jquery
+    @toastr_js
+    @toastr_render
+   
 </body>
 </html>

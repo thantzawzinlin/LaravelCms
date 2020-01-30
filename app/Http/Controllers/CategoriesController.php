@@ -37,7 +37,7 @@ class CategoriesController extends Controller
     {
        // dd($request->all());
        $validatedData = $request->validate([
-        'name' => 'required'
+        'name' => 'required|unique:categories'  //When you use the unique rule you've got to say on which table it needs to be unique. here is (categories) table
         
     ]);
     
@@ -47,6 +47,7 @@ class CategoriesController extends Controller
     //    $category = new Category();
     //     $category->name = $request->name;
     //     $category->save();
+         toastr('Category successfully created','warning');
         return redirect()->back();
     }
 
