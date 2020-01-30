@@ -73,7 +73,36 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            
+            <div class="container">
+                <div class="row">
+                    @auth
+                    <div class="col col-md-4">
+                       <ul class="list-group">
+                            <li class="list-group-item text-primary">
+                               <a href="{{ route('home') }}">Home</a> 
+                            </li>
+                            <li class="list-group-item text-primary">
+                              <a href="{{route('category.index')}}" class="text-warning">All Category</a>
+                            </li>
+                            <li class="list-group-item text-primary">
+                              <a href="{{route('category.create')}}">Create Category</a>
+                            </li>
+                           <li class="list-group-item text-primary">Post</li>
+                           <li class="list-group-item text-primary">Create Category 4</li>
+                           <li class="list-group-item text-primary">Create Category 5</li>
+                       </ul>
+                    </div>
+                     @endauth
+                    <div class="col col-md-8">
+                        @yield('content')
+                    </div>                 
+                     
+                </div>
+                
+            </div>
+            
+                   
         </main>
     </div>
 </body>
